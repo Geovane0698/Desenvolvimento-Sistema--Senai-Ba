@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <locale.h>
+#include <string.h>
+
+int main(){
+	setlocale(LC_ALL,"portuguese");
+
+	char aluno[2][100],consulta[100];
+	float media[10];
+	int idade[10], alunoexiste, indice;
+	
+	for(int i=0; i<2; i++){
+		printf("\nALUNO DIGITE SEU NOME: ");
+		gets(aluno[i]);
+		fflush(stdin);
+		printf("\nINFORME SUA MEDIA:");
+		scanf("%f",&media[i]);
+		fflush(stdin);
+		printf("\nINFORME SUA IDADE: ");
+		scanf("%d",&idade[i]);
+		fflush(stdin);
+	}
+		printf("\nQUAL ALUNO DESEJA CONSULTAR? ");
+		scanf("%s",consulta);
+		
+	for(int c=0; c<2; c++){
+		if(strcmp(consulta,aluno[c])==0){
+			alunoexiste=1;
+			indice=c;
+		
+		}
+	}
+	if(alunoexiste==1){
+		printf("%s\n",aluno[indice]);
+		printf("%f\n",media[indice]);
+		printf("%d\n",idade[indice]);
+	}else{
+		printf("ALUNO NÃO CADASTRADO!");
+	}
+
+	
+return 0;	
+}
