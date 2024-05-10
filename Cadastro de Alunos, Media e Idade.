@@ -5,11 +5,11 @@
 int main(){
 	setlocale(LC_ALL,"portuguese");
 
-	char aluno[2][100],consulta[100];
+	char aluno[10][100],consulta[100];
 	float media[10];
 	int idade[10], alunoexiste, indice;
 	
-	for(int i=0; i<2; i++){
+	for(int i=0; i<10; i++){
 		printf("\nALUNO DIGITE SEU NOME: ");
 		gets(aluno[i]);
 		fflush(stdin);
@@ -23,7 +23,7 @@ int main(){
 		printf("\nQUAL ALUNO DESEJA CONSULTAR? ");
 		scanf("%s",consulta);
 		
-	for(int c=0; c<2; c++){
+	for(int c=0; c<10; c++){
 		if(strcmp(consulta,aluno[c])==0){
 			alunoexiste=1;
 			indice=c;
